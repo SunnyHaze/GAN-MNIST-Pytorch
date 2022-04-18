@@ -80,9 +80,9 @@ GAN的核心就在于如下两点：
   
 |类型|1~100Epoch训练结果图片|
 |-|-|
-|$D$ 训练1 Epoch对 $G$ 训练1 Epoch|![](images/epoch2epoch.gif)|
-|$D$ 训练2 Epoch对 $G$ 训练1 Epoch|![](images/epoch2two_epoch.gif)|
-|$D$ 训练1 Batch 对 $G$ 训练1 Batch|![](images/batch2batch.gif)|
+|**D** 训练1 Epoch对 **G** 训练1 Epoch|![](images/epoch2epoch.gif)|
+|**D** 训练2 Epoch对 **G** 训练1 Epoch|![](images/epoch2two_epoch.gif)|
+|**D** 训练1 Batch 对 **G** 训练1 Batch|![](images/batch2batch.gif)|
 
 
 在这个样例中，我们通过实验认为，`Batch to Batch`的方法是更为有效的，更加符合期望的。
