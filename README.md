@@ -1,4 +1,9 @@
 # 利用GAN生成MNIST手写体数字
+![Powered by](https://img.shields.io/badge/Based_on-Pytorch-blue?logo=pytorch)
+[![Github](https://img.shields.io/badge/Github_repo-GAN_MNIST_Pytorch-green?logo=github)](https://github.com/SunnyHaze/GAN-MNIST-Pytorch)
+![GitHub repo size](https://img.shields.io/github/repo-size/SunnyHaze/GAN-MNIST-Pytorch?logo=hack%20the%20box)
+![GitHub top language](https://img.shields.io/github/languages/top/Sunnyhaze/GAN-MNIST-Pytorch?color=green&logo=python)
+![GitHub](https://img.shields.io/github/license/Sunnyhaze/GAN-MNIST-Pytorch?logo=license)
 - GAN，（Generative adversarial network，生成对抗神经网络）是Ian J. Goodfellow在2014年提出的神经网络模型，后来其各种衍生模型在深度学习领域取得了相当成功的结果，主要在**图像生成领域**取得了成功，是一种自监督的模型框架。。
   - [《Genrative Adversarial Nets》论文链接](https://proceedings.neurips.cc/paper/2014/file/5ca3e9b122f61f8f06494c97b1afccf3-Paper.pdf)
   - 这篇论文非常关注数学推导的证明，如果你不太关心这部分，或者数学基础较差也不用担心。论文浅尝辄止即可，只要掌握大致的逻辑也能书写出这个模型的代码。
@@ -56,7 +61,7 @@ GAN的核心就在于如下两点：
     predict = D(fake_img) # 利用判别器预测
     fake_loss = criterion(predict, real_label)  # 注意这里目标是“真标签”
     ```
-其实很好理解，判别器的目标是为了欺骗生成器，自然它的优化目标逻辑是与生成器相反的，对应`Algorithm`图中的**绿色框**，一个是上升的梯度，一个是下降的梯度。
+其实很好理解，判别器的目标是为了欺骗生成器，自然它的优化目标逻辑是与生成器相反的，对应`Algorithm`图中的**绿色框**，一个是上升的梯度，一个是下降的梯度。而`pytorch`的优化器会自动将参数向着“让两个参与loss的变量”更加接近的方向进行优化，所以此处是使得`Generator`的loss为预测值和`real_label`的计算值。
 
 其余的问题，按部就班书写逻辑即可，需要多多研究论文和其他人的博客以加深理解。
 
